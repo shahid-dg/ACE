@@ -1,4 +1,4 @@
 pub mod assets;
-pub mod templates;
-pub mod report;
 pub mod error;
+pub mod report;
+pub mod templates;

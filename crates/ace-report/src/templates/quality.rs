@@ -1,11 +1,7 @@
 //! Templates for quality analysis reports.
 
 /// Render a quality analysis section.
-pub fn render_quality_analysis(
-    item_id: &str,
-    confidence: f64,
-    annotation_count: usize,
-) -> String {
+pub fn render_quality_analysis(item_id: &str, confidence: f64, annotation_count: usize) -> String {
     format!(
         r#"<section class="quality-analysis">
   <h3>Quality Analysis: {}</h3>

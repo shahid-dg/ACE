@@ -1,5 +1,4 @@
 [build]
-jobs = 0
 
 [term]
 verbose = false

@@ -1,0 +1,12 @@
+[build]
+jobs = 0
+
+[term]
+verbose = false
+color = "auto"
+
+[alias]
+xtest = "test --workspace --all-targets --all-features"
+xcheck = "check --workspace --all-targets --all-features"
+xclippy = "clippy --workspace --all-targets --all-features -- -D warnings"
+xbench = "bench --workspace --all-features"

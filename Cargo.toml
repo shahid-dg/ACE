@@ -1,0 +1,85 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/ace-core",
+    "crates/ace-io",
+    "crates/ace-cli",
+    "crates/ace-report",
+    "benchmarks",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT"
+authors = ["ACE Contributors"]
+description = "High-performance annotation quality assurance and consensus analysis for large-scale datasets."
+repository = "https://github.com/shahid-dg/ace"
+homepage = "https://github.com/shahid-dg/ace"
+readme = "README.md"
+keywords = ["annotation", "data-quality", "machine-learning", "statistics", "rust"]
+categories = ["command-line-utilities", "data-structures", "science"]
+
+[workspace.dependencies]
+
+# Internal crates
+ace-core = { path = "crates/ace-core" }
+ace-io = { path = "crates/ace-io" }
+ace-report = { path = "crates/ace-report" }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+csv = "1"
+
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# CLI
+clap = { version = "4", features = ["derive", "env"] }
+
+# Parallel processing
+rayon = "1"
+
+# Async runtime
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "fs", "io-util"] }
+
+# Logging / diagnostics
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+
+# Numerical / statistical computation
+ndarray = "0.16"
+
+# Randomness
+rand = "0.9"
+
+# HTML reporting
+tera = "1"
+
+# Time handling
+chrono = { version = "0.4", features = ["serde"] }
+
+# UUIDs
+uuid = { version = "1", features = ["v4", "serde"] }
+
+# CLI UX
+indicatif = "0.18"
+
+# Testing
+tempfile = "3"
+
+# Benchmarking
+criterion = { version = "0.7", features = ["html_reports"] }
+
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+
+[profile.bench]
+inherits = "release"

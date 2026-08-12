@@ -506,7 +506,7 @@ Planned components may include:
 ## From source
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ace.git
+git clone https://github.com/shahid-dg/ace.git
 cd ace
 
 cargo build --release
@@ -531,7 +531,7 @@ ace --version
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ace.git
+git clone https://github.com/shahid-dg/ace.git
 cd ace
 ```
 
